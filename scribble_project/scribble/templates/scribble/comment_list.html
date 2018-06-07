@@ -6,7 +6,7 @@
 <ul>
     {% for comment in comments %}
         <li class="comment">
-            <a href="">{{ comment.author }}</a>
+            <a href="{% url 'comment_detail' pk=comment.pk %}">{{ comment.author }}</a>
             <p class="post">{{comment.body}}</p>
             <p><b>In reply to</b></p>
             <p>{{comment.post}}</p>
