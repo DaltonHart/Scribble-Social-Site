@@ -1,0 +1,19 @@
+{% extends 'scribble/base.html' %}
+
+{% block content %}
+
+<h2>{{ post.author }} <a href="">(edit)</a></h2>
+<h4>{{ post.title }}</h4>
+
+<p class="post">{{post.body}}</p>
+
+<h3 >Comments<a href="">(+)</a></h3>
+<ul>
+    {% for comment in post.comments.all %}
+        <li class="post">
+            <a href="">{{ comment.author }}</a>
+            <p>{{ comment.body }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

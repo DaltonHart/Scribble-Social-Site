@@ -1,0 +1,18 @@
+{% extends 'scribble/base.html' %}
+
+{% block content %}
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li class="comment">
+            <a href="">{{ comment.author }}</a>
+            <p class="post">{{comment.body}}</p>
+            <p><b>In reply to</b></p>
+            <p>{{comment.post}}</p>
+            <p><em class="post">{{comment.post.body}}</em></p>
+        </li>
+        <hr>
+    {% endfor %}
+</ul>
+{% endblock %}
